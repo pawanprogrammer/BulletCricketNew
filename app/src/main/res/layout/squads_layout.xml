@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/view_divider"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/textsquads"
+        android:padding="3dp"
+        android:singleLine="true"
+        android:gravity="center"
+        android:textColor="@color/textcolor"
+        android:id="@+id/tv_teama_name"></TextView>
+
+    <View
+        android:layout_width="0.1dp"
+        android:layout_height="match_parent"
+        android:id="@+id/view_divider"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/white"
+        ></View>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/view_divider"
+        android:textSize="@dimen/textsquads"
+        android:singleLine="true"
+        android:gravity="center"
+        android:padding="3dp"
+        android:textColor="@color/textcolor"
+        android:id="@+id/tv_teamb_name"></TextView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:id="@+id/view_team"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/tv_teama_name"
+        android:layout_marginTop="5dp"></View>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/linear_teama"
+        app:layout_constraintTop_toBottomOf="@+id/view_team"
+        android:orientation="vertical"
+        app:layout_constraintRight_toLeftOf="@+id/view_divider"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name1"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role1"></TextView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name2"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role2"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name3"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role3"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name4"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role4"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name5"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role5"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name6"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role6"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name7"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role7"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name8"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role8"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name9"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role9"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name10"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role10"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name11"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role11"></TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/view_team"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@+id/view_divider"
+        app:layout_constraintRight_toRightOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name1"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role1"></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name2"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role2"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name3"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role3"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name4"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role4"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name5"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role5"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name6"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role6"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name7"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role7"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name8"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role8"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name9"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role9"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name10"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role10"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name11"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role11"></TextView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/linear_teama"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:background="@color/black"
+        android:text="Benchers"
+        android:id="@+id/tv_benchers"
+        android:textColor="@color/textcolor"
+        android:textSize="14sp"
+        android:gravity="center"></TextView>
+
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_benchers"
+        android:orientation="vertical"
+        app:layout_constraintRight_toLeftOf="@+id/view_divider"
+        app:layout_constraintLeft_toLeftOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name12"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role12"></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name13"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role13"></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name14"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role14"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name15"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role15"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name16"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role16"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teama_name17"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teama_role17"></TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_benchers"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@+id/view_divider"
+        app:layout_constraintRight_toRightOf="parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/squads_text_back"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsquads"
+            android:textColor="@color/white"
+            android:id="@+id/tv_teamb_name12"></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_role_squads"
+            android:textColor="@color/textcolor"
+            android:id="@+id/tv_teamb_role12"></TextView>
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name13"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role13"></TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name14"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role14"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name15"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role15"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name16"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role16"></TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/squads_text_back"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsquads"
+                android:textColor="@color/white"
+                android:id="@+id/tv_teamb_name17"></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_role_squads"
+                android:textColor="@color/textcolor"
+                android:id="@+id/tv_teamb_role17"></TextView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
