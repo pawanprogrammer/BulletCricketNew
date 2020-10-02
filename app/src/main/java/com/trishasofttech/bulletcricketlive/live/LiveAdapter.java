@@ -28,7 +28,7 @@ import static android.media.MediaExtractor.MetricsConstants.FORMAT;
 
 public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> {
     Context context;
-    ArrayList<HashMap<String,String>> ArrayListSeries;
+    ArrayList<HashMap<String, String>> ArrayListSeries;
     private String[] match;
     private String[] matchtype;
     private String[] matchvenue;
@@ -39,10 +39,11 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
     private static final String FORMAT = "%02d:%02d:%02d";
 
     String data;
-    public LiveAdapter(Context context, String[] match, long[] id,String[] matchseries,ArrayList ArrayListSeries) {
+
+    public LiveAdapter(Context context, String[] match, long[] id, String[] matchseries, ArrayList ArrayListSeries) {
         this.context = context;
         this.id = id;
-        this.match=match;
+        this.match = match;
         this.matchseries = matchseries;
         this.ArrayListSeries = ArrayListSeries;
     }
@@ -55,19 +56,36 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
 
     @Override
     public void onBindViewHolder(final MyNoteHolder holder, final int position) {
-        //Toast.makeText ( context,match.toString (),Toast.LENGTH_LONG ).show ();
-        final HashMap<String, String> hash = ArrayListSeries.get ( position );
-        if (hash.get("status").equalsIgnoreCase("notstarted"))
-        {
+        final HashMap<String, String> hash = ArrayListSeries.get(position);
+        if (hash.get("status").equalsIgnoreCase("notstarted")) {
+            try {
+                int id = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("aTeam"), null, null);
+                if (id == 0) {
+                    holder.iv_team1.setImageDrawable(context.getResources().getDrawable(R.drawable.logo));
+                } else {
+                    holder.iv_team1.setImageResource(id);
+                }
+                int id1 = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("bTeam"), null, null);
+                if (id1 == 0) {
+                    holder.iv_team2.setImageDrawable(context.getResources().getDrawable(R.drawable.logo));
+
+                } else {
+                    holder.iv_team2.setImageResource(id1);
+                }
+
+            } catch (Exception e) {
+                e.getMessage();
+            }
+
             holder.tv_matchlive.setVisibility(View.GONE);
-            holder.noteName.setText ( hash.get ( "matchseries" ) );
-            holder.tv_team1.setText ( hash.get ( "aTeam" ) );
-            holder.tv_team2.setText ( hash.get ( "bTeam" ) );
-            String a_team_score = hash.get ( "a_1" );
+            holder.noteName.setText(hash.get("matchseries"));
+            holder.tv_team1.setText(hash.get("aTeam"));
+            holder.tv_team2.setText(hash.get("bTeam"));
+            String a_team_score = hash.get("a_1");
 //        String a_team_scores=a_team_score.replace("in", "\n");
             holder.tv_runs1.setVisibility(View.GONE);
             holder.tv_overs1.setVisibility(View.GONE);
-            String b_team_score = hash.get ( "b_1" );
+            String b_team_score = hash.get("b_1");
             // String b_team_scores=b_team_score.replace("in", "\n");
             holder.tv_runs2.setVisibility(View.GONE);
             holder.tv_overs2.setVisibility(View.GONE);
@@ -75,26 +93,24 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
             holder.team1_market.setVisibility(View.GONE);
             holder.team2_market.setVisibility(View.GONE);
 
-            if (hash.get ( "start_date" ).equalsIgnoreCase ( "Vs" )) {
-                holder.tv_vs.setText ( "Vs" );
+            if (hash.get("start_date").equalsIgnoreCase("Vs")) {
+                holder.tv_vs.setText("Vs");
 
             } else {
 
-                //Toast.makeText(context, hash.get("start_date"), Toast.LENGTH_SHORT).show();
+                long miliSec = Long.parseLong(hash.get("start_date"));
 
-                long miliSec = Long.parseLong ( hash.get ( "start_date" ) );
+                long currentsec = miliSec - 19800000;
+                DateFormat simple = new SimpleDateFormat("HH:mm:ss");
 
-                long currentsec = miliSec-19800000;
-                DateFormat simple = new SimpleDateFormat ( "HH:mm:ss" );
-
-                Date result = new Date ( currentsec );
+                Date result = new Date(currentsec);
 
                 //  holder.tv_vs.setText ( simple.format ( result ) );
-                final String con_date_time =  simple.format ( result );
+                final String con_date_time = simple.format(result);
 
-                new CountDownTimer ( currentsec , 1000 ) { // adjust the milli seconds here
+                new CountDownTimer(currentsec, 1000) { // adjust the milli seconds here
 
-                    public void onTick ( long millisUntilFinished ) {
+                    public void onTick(long millisUntilFinished) {
 
                         long ms = millisUntilFinished;
                     /*String text = String.format("%02d\'%02d\' %02d\"",
@@ -102,77 +118,84 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
                             TimeUnit.MILLISECONDS.toMinutes(ms) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(ms)),
                             TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(ms)));
                     holder.tv_vs.setText(text);*/
-                        holder.tv_vs.setText ( "" + String.format ( FORMAT ,
-                                TimeUnit.MILLISECONDS.toHours ( millisUntilFinished ) ,
-                                TimeUnit.MILLISECONDS.toMinutes ( millisUntilFinished ) - TimeUnit.HOURS.toMinutes (
-                                        TimeUnit.MILLISECONDS.toHours ( millisUntilFinished ) ) ,
-                                TimeUnit.MILLISECONDS.toSeconds ( millisUntilFinished ) - TimeUnit.MINUTES.toSeconds (
-                                        TimeUnit.MILLISECONDS.toMinutes ( millisUntilFinished ) ) ) );
+                        holder.tv_vs.setText("" + String.format(FORMAT,
+                                TimeUnit.MILLISECONDS.toHours(millisUntilFinished),
+                                TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(
+                                        TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
+                                TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
+                                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
                     }
 
-                    public void onFinish () {
-                        holder.tv_vs.setText ( "Vs" );
+                    public void onFinish() {
+                        holder.tv_vs.setText("Vs");
                     }
-                }.start ( );
-
+                }.start();
             }
             holder.cardlive.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     Intent live = new Intent(context, LiveDetailsActivity.class);
                     live.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     live.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                /*SharedPreferences sp= context.getSharedPreferences("live", 0);
-                SharedPreferences.Editor ed = sp.edit();
-                ed.putLong("id", id[position]);
-                ed.putString("match", String.valueOf(match[position]));
-                Toast.makeText(context, String.valueOf(match[position]), Toast.LENGTH_SHORT).show();
-                ed.commit();
-                */
-                    live.putExtra ( "key",hash.get("key") );
+                    live.putExtra("key", hash.get("key"));
                     context.startActivity(live);
-
-
                 }
             });
-        }
-        else {
-            holder.noteName.setText ( hash.get ( "matchseries" ) );
-            holder.tv_team1.setText ( hash.get ( "aTeam" ) );
-            holder.tv_team2.setText ( hash.get ( "bTeam" ) );
-            String a_team_score = hash.get ( "a_1" );
-//        String a_team_scores=a_team_score.replace("in", "\n");
-            holder.tv_runs1.setText ( hash.get ( "aruns" ) + "/" + hash.get ( "awickets" ) );
-            holder.tv_overs1.setText ( hash.get ( "aovers" ) + " (Overs)" );
-            String b_team_score = hash.get ( "b_1" );
-            // String b_team_scores=b_team_score.replace("in", "\n");
-            holder.tv_runs2.setText ( hash.get ( "bruns" ) + "/" + hash.get ( "bwickets" ) );
-            holder.tv_overs2.setText ( hash.get ( "bovers" ) + " (Overs)" );
+        } else {
+
+            try {
+                int id = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("aTeam"), null, null);
+                if (id == 0) {
+                    holder.iv_team1.setImageDrawable(context.getResources().getDrawable(R.drawable.logo));
+                } else {
+                    holder.iv_team1.setImageResource(id);
+                }
+
+                int id1 = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("bTeam"), null, null);
+
+                if (id1 == 0) {
+                    holder.iv_team2.setImageDrawable(context.getResources().getDrawable(R.drawable.logo));
+
+                } else {
+                    holder.iv_team2.setImageResource(id1);
+                }
+
+            } catch (Exception e) {
+                e.getMessage();
+            }
+
+            holder.noteName.setText(hash.get("matchseries"));
+            holder.tv_team1.setText(hash.get("aTeam"));
+            holder.tv_team2.setText(hash.get("bTeam"));
+            holder.tv_runs1.setText(hash.get("aruns") + "/" + hash.get("awickets"));
+            holder.tv_overs1.setText(hash.get("aovers") + " (Overs)");
+            String b_team_score = hash.get("b_1");
+            holder.tv_runs2.setText(hash.get("bruns") + "/" + hash.get("bwickets"));
+            holder.tv_overs2.setText(hash.get("bovers") + " (Overs)");
 
             holder.team1_market.setText(hash.get("awin"));
             holder.team2_market.setText(hash.get("bwin"));
 
-            if (hash.get ( "start_date" ).equalsIgnoreCase ( "Vs" )) {
-                holder.tv_vs.setText ( "Vs" );
+            if (hash.get("start_date").equalsIgnoreCase("Vs")) {
+                holder.tv_vs.setText("Vs");
 
             } else {
 
                 //Toast.makeText(context, hash.get("start_date"), Toast.LENGTH_SHORT).show();
 
-                long miliSec = Long.parseLong ( hash.get ( "start_date" ) );
+                long miliSec = Long.parseLong(hash.get("start_date"));
 
-                long currentsec = miliSec-19800000;
-                DateFormat simple = new SimpleDateFormat ( "HH:mm:ss" );
+                long currentsec = miliSec - 19800000;
+                DateFormat simple = new SimpleDateFormat("HH:mm:ss");
 
-                Date result = new Date ( currentsec );
+                Date result = new Date(currentsec);
 
                 //  holder.tv_vs.setText ( simple.format ( result ) );
-                final String con_date_time =  simple.format ( result );
+                final String con_date_time = simple.format(result);
 
-                new CountDownTimer ( currentsec , 1000 ) { // adjust the milli seconds here
+                new CountDownTimer(currentsec, 1000) { // adjust the milli seconds here
 
-                    public void onTick ( long millisUntilFinished ) {
+                    public void onTick(long millisUntilFinished) {
 
                         long ms = millisUntilFinished;
                     /*String text = String.format("%02d\'%02d\' %02d\"",
@@ -180,18 +203,18 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
                             TimeUnit.MILLISECONDS.toMinutes(ms) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(ms)),
                             TimeUnit.MILLISECONDS.toSeconds(ms) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(ms)));
                     holder.tv_vs.setText(text);*/
-                        holder.tv_vs.setText ( "" + String.format ( FORMAT ,
-                                TimeUnit.MILLISECONDS.toHours ( millisUntilFinished ) ,
-                                TimeUnit.MILLISECONDS.toMinutes ( millisUntilFinished ) - TimeUnit.HOURS.toMinutes (
-                                        TimeUnit.MILLISECONDS.toHours ( millisUntilFinished ) ) ,
-                                TimeUnit.MILLISECONDS.toSeconds ( millisUntilFinished ) - TimeUnit.MINUTES.toSeconds (
-                                        TimeUnit.MILLISECONDS.toMinutes ( millisUntilFinished ) ) ) );
+                        holder.tv_vs.setText("" + String.format(FORMAT,
+                                TimeUnit.MILLISECONDS.toHours(millisUntilFinished),
+                                TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(
+                                        TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
+                                TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
+                                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
                     }
 
-                    public void onFinish () {
-                        holder.tv_vs.setText ( "Vs" );
+                    public void onFinish() {
+                        holder.tv_vs.setText("Vs");
                     }
-                }.start ( );
+                }.start();
 
             }
             holder.cardlive.setOnClickListener(new View.OnClickListener() {
@@ -208,7 +231,7 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
                 Toast.makeText(context, String.valueOf(match[position]), Toast.LENGTH_SHORT).show();
                 ed.commit();
                 */
-                    live.putExtra ( "key",hash.get("key") );
+                    live.putExtra("key", hash.get("key"));
                     context.startActivity(live);
 
 
@@ -219,16 +242,14 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
     }
 
 
-
-
     @Override
     public int getItemCount() {
-        return ArrayListSeries.size ();
+        return ArrayListSeries.size();
     }
 
     class MyNoteHolder extends RecyclerView.ViewHolder {
-        TextView noteName, notedate, tv_team1, tv_team2,team1_market,team2_market,
-                tv_matchlive,tv_runs1, tv_runs2, tv_overs1, tv_overs2,tv_vs;
+        TextView noteName, notedate, tv_team1, tv_team2, team1_market, team2_market,
+                tv_matchlive, tv_runs1, tv_runs2, tv_overs1, tv_overs2, tv_vs;
         ImageView iv_team1, iv_team2;
         CardView cardlive;
 
@@ -247,7 +268,7 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
             tv_runs2 = itemView.findViewById(R.id.tv_runs2);
             tv_overs1 = itemView.findViewById(R.id.tv_overs1);
             tv_overs2 = itemView.findViewById(R.id.tv_overs2);
-            tv_vs     = itemView.findViewById ( R.id.tv_vs );
+            tv_vs = itemView.findViewById(R.id.tv_vs);
 
             cardlive = itemView.findViewById(R.id.card_live);
         }

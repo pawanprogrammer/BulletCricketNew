@@ -107,7 +107,7 @@
             android:id="@+id/tv_vs"
             android:text="--VS--"
             android:textColor="#8BC34A"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

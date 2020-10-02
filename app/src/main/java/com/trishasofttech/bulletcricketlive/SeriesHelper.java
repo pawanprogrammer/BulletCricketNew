@@ -13,6 +13,7 @@ public class SeriesHelper {
     public static String[] matchtime;
     public static String[] series;
     public static String[] matchtype;
+    public static String[] link;
     public static int[] id;
     private static String json;
 
@@ -34,6 +35,7 @@ public class SeriesHelper {
             place = new String[jsonArray.length()];
             series = new String[jsonArray.length()];
             matchtype = new String[jsonArray.length()];
+            link =new String[jsonArray.length()];
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                 id[i] = jsonObject1.getInt("series");
@@ -44,7 +46,7 @@ public class SeriesHelper {
                 place[i] = jsonObject1.getString("place");
                 series[i] = jsonObject1.getString("unique_id");
                 matchtype[i] = jsonObject1.getString("type");
-
+                link[i]=jsonObject1.getString("link");
             }
         } catch (JSONException e) {
             e.printStackTrace();

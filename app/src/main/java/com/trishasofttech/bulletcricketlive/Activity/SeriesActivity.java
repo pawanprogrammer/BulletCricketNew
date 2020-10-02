@@ -18,6 +18,7 @@ import com.trishasofttech.bulletcricketlive.SeriesAdapter;
 import com.trishasofttech.bulletcricketlive.SeriesHelper;
 
 public class SeriesActivity extends AppCompatActivity {
+
     RecyclerView recyclerView;
     private String series_url;
     int seriesid;
@@ -58,21 +59,16 @@ public class SeriesActivity extends AppCompatActivity {
             series_url = "http://searchkero.com/cricket/fifthseries.json";
             loadseries();
         }
-
-
-
     }
-
     private void loadseries() {
         StringRequest request = new StringRequest(series_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-
                 SeriesHelper parse = new SeriesHelper(response);
                 parse.serieshelper();
-
                 SeriesAdapter adapter = new SeriesAdapter(getApplicationContext(), SeriesHelper.name, SeriesHelper.date,
-                        SeriesHelper.id, seriesid, SeriesHelper.matchtime, SeriesHelper.gname, SeriesHelper.place, SeriesHelper.series, SeriesHelper.matchtype);
+                        SeriesHelper.id, seriesid, SeriesHelper.matchtime, SeriesHelper.gname, SeriesHelper.place,
+                        SeriesHelper.series, SeriesHelper.matchtype, SeriesHelper.link);
                 recyclerView.setAdapter(adapter);
                 //progressBar.setVisibility(View.GONE);
 
@@ -83,12 +79,10 @@ public class SeriesActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
                 // pd.dismiss();
                 //progressBar.setVisibility(View.GONE);
-
             }
         }
         );
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
-
     }
 }
