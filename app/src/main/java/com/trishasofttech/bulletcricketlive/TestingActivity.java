@@ -28,20 +28,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TestingActivity extends AppCompatActivity {
-    static String LZ_API_URL = "https://rest.cricketapi.com/rest/";
-
-    static String LZ_APP_ID = "com.trishasofttech.bulletcricketlive";
-    static String ACCESS_KEY = "0b4493705446403556093735ef542914";
-    static String SECRET_KEY = "bb57041e85ab5c279d62b00f085d526b";
-
-    String ACCESS_TOKEN = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testing);
-
-        loadservices();
+        getSupportActionBar().setTitle("POINT TABLE");
 
     }
 

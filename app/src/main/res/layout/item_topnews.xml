@@ -7,14 +7,14 @@
     android:layout_marginTop="10dp"
     android:clickable="true"
     app:cardElevation="10dp"
-    app:cardBackgroundColor="#131313"
     android:focusable="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/card_image"
-        android:layout_margin="5dp"
+        android:background="@drawable/squads_text_back"
+        android:padding="5dp"
   >
 
         <ImageView

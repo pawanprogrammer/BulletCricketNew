@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ import com.trishasofttech.bulletcricketlive.Activity.DetailsNewsActivity;
 import com.trishasofttech.bulletcricketlive.AllNewsApdater;
 import com.trishasofttech.bulletcricketlive.AllNewsHelper;
 import com.trishasofttech.bulletcricketlive.R;
+import com.trishasofttech.bulletcricketlive.TestingActivity;
 import com.trishasofttech.bulletcricketlive.upcoming.UpcomingHelper;
 
 
@@ -54,6 +56,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView_series, recyclerView;
     ImageView iv_first;
     TextView tv_first;
+    Button btn_point;
     private String upcoming_url = "http://cricapi.com/api/matchCalendar?apikey=QU2rB4akb2SbwAmUFTwtZQ8whBX2";
     private String top_series_url = "http://searchkero.com/cricket/topseries.json";
     private String allnews_url = "http://searchkero.com/cricket/latestnews.json";
@@ -62,9 +65,18 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         //((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+        btn_point = rootView.findViewById(R.id.btn_point);
         tv_first = rootView.findViewById(R.id.tv_first);
         iv_first = rootView.findViewById(R.id.iv_first);
 
+
+        btn_point.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent point = new Intent(getActivity(), TestingActivity.class);
+                startActivity(point);
+            }
+        });
 
         recyclerView_series = rootView.findViewById(R.id.recyclerview_series);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);

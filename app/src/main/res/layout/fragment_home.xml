@@ -39,11 +39,43 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="POINT TABLE"
+                    android:id="@+id/tv_point_table"
+                    android:textSize="20sp"
+                    android:textColor="@color/textcolor"
+                    android:fontFamily="serif"
+                    android:padding="2dp"></TextView>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="VIEW All"
+                    android:fontFamily="serif"
+                    android:id="@+id/btn_point"
+                    android:background="@drawable/btn_back"
+                    android:paddingLeft="20dp"
+                    android:textColor="#FFF"
+                    android:textSize="14sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    android:drawableRight="@drawable/ic_right_black_24dp"
+                    android:layout_marginRight="10dp"
+                    android:drawablePadding="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"></Button>
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp">
+                android:padding="5dp">
                 <Button
                     android:id="@+id/tv_topnews"
                     android:layout_width="match_parent"
