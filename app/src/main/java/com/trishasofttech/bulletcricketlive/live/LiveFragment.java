@@ -46,13 +46,36 @@ public class LiveFragment extends Fragment {
         final String tokenid = sp.getString("tokenid", null);
 
         loadupcoming(tokenid);
+        /*handler = new Handler();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                while (true) {
+                    try {
+                        Thread.sleep(10000);
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                // TODO Auto-generated method stub
+                                // Write your code here to update the UI.
+                                loadupcoming(tokenid);
+                            }
+                        });
+                    } catch (Exception e) {
+                        // TODO: handle exception
+                    }
+                }
+            }
+        }).start();*/
+
         /*handler = new Handler ();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 //Do something after 20 seconds
                 loadupcoming(tokenid);
-                Toast.makeText ( getActivity (),"update",Toast.LENGTH_LONG ).show ();
+                //Toast.makeText ( getActivity (),"update",Toast.LENGTH_LONG ).show ();
             }
         }, 10000);*/
         return v;

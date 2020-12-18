@@ -4,38 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_live"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_height="220dp"
+    android:layout_margin="3dp"
     app:cardCornerRadius="5dp"
     app:cardElevation="5dp"
     app:cardUseCompatPadding="false">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="220dp"
         android:background="@drawable/squads_text_back">
 
-        <!--<ImageView
-            android:id="@+id/iv_upcoming"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tv_league"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:src="@mipmap/ic_launcher"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
--->
+            android:fontFamily="serif"
+            android:padding="2dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="serif"
-            android:padding="5dp"
+            android:padding="2dp"
             android:text="No Match Now.."
             android:textAlignment="center"
-            android:textColor="#FFF"
-            android:textSize="16sp"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            android:textColor="@color/textcolor"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_league"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/tv_matchdetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:textAllCaps="true"
+            android:padding="2dp"
+            android:text="Match Information"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            ></TextView>
+
+
 
 
         <ImageView
@@ -45,8 +63,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
             android:src="@drawable/logo"
+            android:layout_marginTop="5dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"></ImageView>
+            app:layout_constraintTop_toBottomOf="@+id/tv_matchdetails"></ImageView>
 
         <TextView
             android:id="@+id/tv_runs1"
@@ -73,29 +92,27 @@
 
         <TextView
             android:id="@+id/tv_team1"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:fontFamily="serif"
             android:text="Team 1"
-            android:maxLength="15"
             android:textColor="#FF9800"
             android:textSize="14sp"
-            android:padding="5dp"
+            android:padding="3dp"
+            android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@+id/iv_team1"
             app:layout_constraintLeft_toLeftOf="parent"></TextView>
 
         <TextView
             android:id="@+id/tv_team2"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:textAlignment="center"
             android:fontFamily="serif"
             android:text="Team 2"
-            android:maxLength="15"
             android:textColor="#FF9800"
             android:textSize="14sp"
-            android:padding="5dp"
+            android:padding="3dp"
             app:layout_constraintTop_toBottomOf="@+id/iv_team2"
             app:layout_constraintRight_toRightOf="parent"></TextView>
 
@@ -111,7 +128,7 @@
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"></TextView>
+            app:layout_constraintTop_toBottomOf="@+id/tv_matchdetails"></TextView>
 
         <ImageView
             android:id="@+id/iv_team2"
@@ -119,9 +136,10 @@
             android:layout_height="40dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
             android:src="@drawable/logo"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"></ImageView>
+            app:layout_constraintTop_toBottomOf="@+id/tv_matchdetails"></ImageView>
 
         <TextView
             android:id="@+id/tv_runs2"
@@ -168,11 +186,10 @@
             android:layout_height="wrap_content"
             android:textColor="#FFF"
             android:background="@drawable/market_backa"
-            android:textSize="12sp"
-            android:padding="5dp"
+            android:textSize="10sp"
+            android:padding="3dp"
             app:layout_constraintTop_toBottomOf="@+id/tv_vs"
             app:layout_constraintRight_toLeftOf="@+id/v_mar"
-            android:layout_marginRight="10dp"
             ></TextView>
 
         <View
@@ -188,11 +205,10 @@
             android:id="@+id/team2_market"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:background="@drawable/market_backb"
             android:textColor="#FFF"
-            android:textSize="12sp"
-            android:padding="5dp"
+            android:textSize="10sp"
+            android:padding="3dp"
             app:layout_constraintTop_toBottomOf="@+id/tv_vs"
             app:layout_constraintLeft_toRightOf="@+id/v_mar"
             ></TextView>
@@ -207,7 +223,8 @@
             android:textColor="#C3C3C1"
             android:textSize="12sp"
             android:padding="5dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_team1"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_20overs_value"
             app:layout_constraintLeft_toLeftOf="parent"
             ></TextView>
 
@@ -217,12 +234,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:fontFamily="serif"
+            android:layout_marginTop="5dp"
             android:text="00-00"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="12sp"
             android:padding="5dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_team1"
+            app:layout_constraintBottom_toTopOf="@+id/tv_20overs_value"
             app:layout_constraintLeft_toRightOf="@+id/tv_market"
             ></TextView>
 
@@ -236,7 +254,7 @@
             android:textColor="#C3C3C1"
             android:textSize="12sp"
             android:padding="5dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_market"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             ></TextView>
 
@@ -251,7 +269,7 @@
             android:textSize="12sp"
             android:padding="5dp"
             app:layout_constraintLeft_toRightOf="@+id/tv_20overs"
-            app:layout_constraintTop_toBottomOf="@+id/tv_market"
+            app:layout_constraintBottom_toBottomOf="parent"
             ></TextView>
 
         <TextView
@@ -261,10 +279,11 @@
             android:layout_marginLeft="10dp"
             android:fontFamily="serif"
             android:text="Market:"
+            android:layout_marginTop="5dp"
             android:textColor="#C3C3C1"
             android:textSize="12sp"
             android:padding="5dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_team1"
+            app:layout_constraintBottom_toTopOf="@+id/tv_20overs_value1"
             app:layout_constraintRight_toLeftOf="@+id/tv_market_value1"
             ></TextView>
 
@@ -275,12 +294,13 @@
             android:layout_marginLeft="10dp"
             android:fontFamily="serif"
             android:text="00-00"
+            android:layout_marginTop="5dp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="12sp"
             android:padding="5dp"
             android:layout_marginRight="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_team2"
+            app:layout_constraintBottom_toTopOf="@+id/tv_20overs_value1"
             app:layout_constraintRight_toRightOf="parent"
             ></TextView>
 
@@ -294,7 +314,7 @@
             android:textColor="#C3C3C1"
             android:textSize="12sp"
             android:padding="5dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_market"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/tv_20overs_value1"
             ></TextView>
 
@@ -309,7 +329,7 @@
             android:textColor="@color/white"
             android:textSize="12sp"
             android:padding="5dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_market"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginRight="10dp"
             ></TextView>

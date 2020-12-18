@@ -51,6 +51,13 @@ public class LiveHelper {
                         hashMap.put("start_date", "Vs");
                     }
 
+
+                    hashMap.put("venue", jo2.getString("venue"));
+                    hashMap.put("time", jo2.getJSONObject("start_date").getString("str"));
+                    hashMap.put("matchdetails", jo2.getString("related_name"));
+                    hashMap.put("matchtype", jo2.getString("format"));
+                    JSONObject jObjLeague = jo2.getJSONObject("season");
+                    hashMap.put("matchleague", jObjLeague.getString("name"));
                     hashMap.put("matchseries", jo2.getString("name"));
                     hashMap.put("key", jo2.getString("key"));
 
@@ -62,10 +69,11 @@ public class LiveHelper {
                     JSONObject jobjTeam = jo2.getJSONObject("teams");
 
                     JSONObject jObjteamA = jobjTeam.getJSONObject("a");
-                    hashMap.put("aTeam", jObjteamA.getString("key"));
+                    hashMap.put("aTeam", jObjteamA.getString("name"));
+                    hashMap.put("aTeamlogo", jObjteamA.getString("key"));
                     JSONObject jObjteamB = jobjTeam.getJSONObject("b");
-                    hashMap.put("bTeam", jObjteamB.getString("key"));
-
+                    hashMap.put("bTeam", jObjteamB.getString("name"));
+                    hashMap.put("bTeamlogo", jObjteamB.getString("key"));
 
                     if (jo2.getString("format").toString().equalsIgnoreCase("test")) {
                         JSONObject jobjIning = jo2.getJSONObject("innings");

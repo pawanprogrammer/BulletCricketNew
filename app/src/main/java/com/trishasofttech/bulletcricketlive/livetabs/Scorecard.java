@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -108,13 +109,15 @@ public class Scorecard extends Fragment {
     private TableLayout table_team_a_1, table_team_a_2, table_team_b_1, table_team_b_2;
 
     private ConstraintLayout container_teama_2, container_teamb_2;
-
+    private LinearLayout linear_layout_a1, linear_layout_b1;
     String tokenid;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.item_scorecard, container, false);
 
+        linear_layout_a1 = v.findViewById(R.id.linear_a1);
+        linear_layout_b1 = v.findViewById(R.id.linear_b1);
         /*for test match container*/
         container_teama_2= v.findViewById(R.id.container_teama_2);
         container_teamb_2= v.findViewById(R.id.container_teamb_2);
@@ -491,10 +494,10 @@ public class Scorecard extends Fragment {
         iv_teama_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (table_team_a_1.getVisibility() == View.VISIBLE) {
-                    table_team_a_1.setVisibility(View.GONE);
+                if (linear_layout_a1.getVisibility() == View.VISIBLE) {
+                    linear_layout_a1.setVisibility(View.GONE);
                 } else {
-                    table_team_a_1.setVisibility(View.VISIBLE);
+                    linear_layout_a1.setVisibility(View.VISIBLE);
                 }
 
             }
@@ -521,10 +524,10 @@ public class Scorecard extends Fragment {
         iv_teamb_up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (table_team_b_1.getVisibility() == View.VISIBLE) {
-                    table_team_b_1.setVisibility(View.GONE);
+                if (linear_layout_b1.getVisibility() == View.VISIBLE) {
+                    linear_layout_b1.setVisibility(View.GONE);
                 } else {
-                    table_team_b_1.setVisibility(View.VISIBLE);
+                    linear_layout_b1.setVisibility(View.VISIBLE);
                 }
 
             }

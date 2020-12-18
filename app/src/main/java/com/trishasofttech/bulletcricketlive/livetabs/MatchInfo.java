@@ -71,7 +71,7 @@ public class MatchInfo extends Fragment {
 
                     tv_match.setText ( jObjCard.getString ( "name" ) );
                     tv_matchtype.setText ( jObjCard.getString ( "format" ) );
-                    tv_series.setText ( jObjCard.getString ( "title" ) );
+                    tv_series.setText ( jObjCard.getString (  "title" ) );
                     JSONObject jsonObject_start_date =  jObjCard.getJSONObject ( "start_date" );
                     tv_matchdate.setText ( jsonObject_start_date.getString ( "str" ) );
                     tv_matchvenue.setText ( jObjCard.getString ( "venue" ) );

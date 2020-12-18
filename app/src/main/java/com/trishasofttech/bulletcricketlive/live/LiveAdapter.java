@@ -59,13 +59,13 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
         final HashMap<String, String> hash = ArrayListSeries.get(position);
         if (hash.get("status").equalsIgnoreCase("notstarted")) {
             try {
-                int id = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("aTeam"), null, null);
+                int id = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("aTeamlogo"), null, null);
                 if (id == 0) {
                     holder.iv_team1.setImageDrawable(context.getResources().getDrawable(R.drawable.logo));
                 } else {
                     holder.iv_team1.setImageResource(id);
                 }
-                int id1 = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("bTeam"), null, null);
+                int id1 = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("bTeamlogo"), null, null);
                 if (id1 == 0) {
                     holder.iv_team2.setImageDrawable(context.getResources().getDrawable(R.drawable.logo));
 
@@ -77,6 +77,10 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
                 e.getMessage();
             }
 
+
+            holder.tv_matchdetails.setText(hash.get("matchdetails") + " | " + hash.get("matchtype") + " | "+ hash.get("venue") +
+                    " | "+ hash.get("time"));
+            holder.tv_league.setText(hash.get("matchleague"));
             holder.tv_matchlive.setVisibility(View.GONE);
             holder.noteName.setText(hash.get("matchseries"));
             holder.tv_team1.setText(hash.get("aTeam"));
@@ -89,7 +93,6 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
             // String b_team_scores=b_team_score.replace("in", "\n");
             holder.tv_runs2.setVisibility(View.GONE);
             holder.tv_overs2.setVisibility(View.GONE);
-
             holder.team1_market.setVisibility(View.GONE);
             holder.team2_market.setVisibility(View.GONE);
 
@@ -144,14 +147,14 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
         } else {
 
             try {
-                int id = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("aTeam"), null, null);
+                int id = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("aTeamlogo"), null, null);
                 if (id == 0) {
                     holder.iv_team1.setImageDrawable(context.getResources().getDrawable(R.drawable.logo));
                 } else {
                     holder.iv_team1.setImageResource(id);
                 }
 
-                int id1 = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("bTeam"), null, null);
+                int id1 = context.getResources().getIdentifier("com.trishasofttech.bulletcricketlive:drawable/" + hash.get("bTeamlogo"), null, null);
 
                 if (id1 == 0) {
                     holder.iv_team2.setImageDrawable(context.getResources().getDrawable(R.drawable.logo));
@@ -164,6 +167,8 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
                 e.getMessage();
             }
 
+            holder.tv_matchdetails.setVisibility(View.GONE);
+            holder.tv_league.setText(hash.get("matchleague"));
             holder.noteName.setText(hash.get("matchseries"));
             holder.tv_team1.setText(hash.get("aTeam"));
             holder.tv_team2.setText(hash.get("bTeam"));
@@ -249,12 +254,15 @@ public class LiveAdapter extends RecyclerView.Adapter<LiveAdapter.MyNoteHolder> 
 
     class MyNoteHolder extends RecyclerView.ViewHolder {
         TextView noteName, notedate, tv_team1, tv_team2, team1_market, team2_market,
-                tv_matchlive, tv_runs1, tv_runs2, tv_overs1, tv_overs2, tv_vs;
+                tv_matchlive, tv_runs1, tv_runs2, tv_overs1, tv_overs2, tv_vs, tv_league,
+        tv_matchdetails;
         ImageView iv_team1, iv_team2;
         CardView cardlive;
 
         public MyNoteHolder(View itemView) {
             super(itemView);
+            tv_matchdetails = itemView.findViewById(R.id.tv_matchdetails);
+            tv_league = itemView.findViewById(R.id.tv_league);
             tv_matchlive = itemView.findViewById(R.id.tv_matchlive);
             noteName = itemView.findViewById(R.id.tv_title);
             notedate = itemView.findViewById(R.id.tv_date);

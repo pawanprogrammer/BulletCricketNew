@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,14 +23,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.squareup.picasso.Picasso;
 import com.trishasofttech.bulletcricketlive.Activity.DetailsNewsActivity;
 import com.trishasofttech.bulletcricketlive.AllNewsApdater;
 import com.trishasofttech.bulletcricketlive.AllNewsHelper;
 import com.trishasofttech.bulletcricketlive.R;
-import com.trishasofttech.bulletcricketlive.TestingActivity;
+import com.trishasofttech.bulletcricketlive.PointTableActivity;
 import com.trishasofttech.bulletcricketlive.upcoming.UpcomingHelper;
 
 
@@ -73,7 +70,7 @@ public class HomeFragment extends Fragment {
         btn_point.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent point = new Intent(getActivity(), TestingActivity.class);
+                Intent point = new Intent(getActivity(), PointTableActivity.class);
                 startActivity(point);
             }
         });

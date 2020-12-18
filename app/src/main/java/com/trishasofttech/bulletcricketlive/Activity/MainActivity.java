@@ -4,12 +4,9 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -23,15 +20,12 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 import com.trishasofttech.bulletcricketlive.Fragment.AboutUsFragment;
 import com.trishasofttech.bulletcricketlive.Fragment.AdvertiseFragment;
 import com.trishasofttech.bulletcricketlive.Fragment.Home.HomeFragment;
 import com.trishasofttech.bulletcricketlive.Fragment.PrivacyFragment;
 import com.trishasofttech.bulletcricketlive.R;
-import com.trishasofttech.bulletcricketlive.TestingActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 

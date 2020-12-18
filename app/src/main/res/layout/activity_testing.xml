@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
-    tools:context=".TestingActivity">
+    tools:context=".PointTableActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -16,13 +16,13 @@
         android:padding="3dp"
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="serif"
-        android:id="@+id/tv_title"
+        android:id="@+id/tv_league"
         android:textColor="@color/white"></TextView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_league"
         >
 
         <LinearLayout
@@ -97,7 +97,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.4"
                 android:text="NRR"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -128,7 +128,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
-                android:text="4"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="14sp"
@@ -139,7 +138,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
-                android:text="2"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="14sp"
@@ -149,7 +147,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
-                android:text="2"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="14sp"
@@ -159,7 +156,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
-                android:text="0"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="14sp"
@@ -169,7 +165,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
-                android:text="4"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="14sp"
@@ -179,8 +174,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
-                android:text="1.09"
+                android:layout_weight="0.4"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="14sp"
@@ -261,7 +255,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.4"
                 android:text="0.48"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -343,7 +337,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.4"
                 android:text="0.12"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -425,7 +419,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.4"
                 android:text="-0.08"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -507,7 +501,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.4"
                 android:text="-0.22"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -589,7 +583,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.4"
                 android:text="-1.45"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -671,7 +665,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.4"
                 android:text="0.52"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -753,7 +747,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.3"
+                android:layout_weight="0.4"
                 android:text="-0.72"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -762,9 +756,5 @@
                 android:id="@+id/tv_nrr8"></TextView>
 
         </LinearLayout>
-
-
-
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
